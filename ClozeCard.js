@@ -52,3 +52,16 @@
 // * Write your constructors such that users can call them with or without the `new` keyword. 
 
 //   * Look up scope-safe constructors, and try to implement them. It takes only two additional lines of code.
+
+function ClozeCard(answer, question) {
+	var str = question;
+	//allow for the search to be insensative to case and anwhere in context
+	// var answer = '/' + answer + '/i';
+	var newQuestion = str.replace(answer, '...');
+	
+	this.front = newQuestion;
+	this.back = answer;
+}
+
+
+module.exports = ClozeCard;
